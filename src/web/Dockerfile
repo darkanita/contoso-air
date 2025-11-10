@@ -4,7 +4,7 @@ ARG APP_PORT=3000
 # Stage 1: dependencies (install with npm, no Bun)
 FROM node:${NODE_VERSION}-slim AS deps
 WORKDIR /app
-ENV NODE_ENV=dev
+ENV NODE_ENV=development
 # Leverage layer caching: only copy manifests first
 COPY package.json package-lock.json ./
 RUN npm ci --no-audit --no-fund
